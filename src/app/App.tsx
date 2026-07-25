@@ -663,13 +663,13 @@ function EnvelopeCard({
           left: "10%",
           right: "10%",
           top: 0,
-          height: 18,
+          height: 24,
           background: isSecret ? "#2A2018" : "#F8F6F2",
           border: `1px solid ${isSecret ? "rgba(201,169,110,0.2)" : "rgba(44,36,32,0.09)"}`,
           borderRadius: 2,
           zIndex: 0,
         }}
-        animate={{ y: hovered ? -14 : -4, opacity: hovered ? 1 : 0 }}
+        animate={{ y: hovered ? -18 : -5, opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.45, ease }}
       />
 
@@ -680,23 +680,23 @@ function EnvelopeCard({
           zIndex: 1,
           background: bgColor,
           border: `1px solid ${borderColor}`,
-          borderRadius: 3,
+          borderRadius: 4,
           overflow: "hidden",
         }}
         animate={{
           boxShadow: hovered
             ? isSecret
-              ? "0 28px 70px rgba(201,169,110,0.15), 0 10px 28px rgba(0,0,0,0.4)"
-              : "0 24px 60px rgba(44,36,32,0.18), 0 8px 24px rgba(44,36,32,0.1)"
+              ? "0 32px 80px rgba(201,169,110,0.15), 0 12px 32px rgba(0,0,0,0.4)"
+              : "0 28px 70px rgba(44,36,32,0.18), 0 10px 28px rgba(44,36,32,0.1)"
             : isSecret
-              ? "0 8px 30px rgba(0,0,0,0.3)"
-              : "0 4px 18px rgba(44,36,32,0.07)",
+              ? "0 10px 36px rgba(0,0,0,0.3)"
+              : "0 5px 22px rgba(44,36,32,0.07)",
         }}
         transition={{ duration: 0.5 }}
       >
         {/* flap */}
         <motion.div
-          style={{ position: "absolute", top: 0, left: 0, right: 0, height: 60, transformOrigin: "top center", zIndex: 2 }}
+          style={{ position: "absolute", top: 0, left: 0, right: 0, height: 84, transformOrigin: "top center", zIndex: 2 }}
           animate={{ rotateX: hovered ? -130 : 0 }}
           transition={{ duration: 0.55, ease }}
         >
@@ -704,7 +704,7 @@ function EnvelopeCard({
         </motion.div>
 
         {/* bottom v-folds */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 55, zIndex: 1 }}>
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 78, zIndex: 1 }}>
           <div style={{ position: "absolute", bottom: 0, left: 0, width: "50%", height: "100%", clipPath: "polygon(0 100%, 100% 100%, 0 0)", background: foldColor1 }} />
           <div style={{ position: "absolute", bottom: 0, right: 0, width: "50%", height: "100%", clipPath: "polygon(0 100%, 100% 100%, 100% 0)", background: foldColor2 }} />
         </div>
@@ -713,11 +713,11 @@ function EnvelopeCard({
         <motion.div
           style={{
             position: "absolute",
-            top: 68,
+            top: 96,
             left: "50%",
             transform: "translateX(-50%)",
-            width: 32,
-            height: 32,
+            width: 46,
+            height: 46,
             borderRadius: "50%",
             background: sealColor,
             border: `1px solid ${sealBorder}`,
@@ -733,22 +733,22 @@ function EnvelopeCard({
           }}
           transition={{ duration: 0.35 }}
         >
-          <span style={{ color: "#C9A96E", fontSize: 10 }}>✦</span>
+          <span style={{ color: "#C9A96E", fontSize: 15 }}>✦</span>
         </motion.div>
 
         {/* content */}
-        <div style={{ padding: "106px 24px 32px", textAlign: "center" }}>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 8.5, letterSpacing: "0.24em", color: subtextColor, textTransform: "uppercase", marginBottom: 8 }}>
+        <div style={{ padding: "150px 32px 44px", textAlign: "center" }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 10.5, letterSpacing: "0.24em", color: subtextColor, textTransform: "uppercase", marginBottom: 12 }}>
             Open when
           </p>
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 15.5, fontWeight: 400, color: textColor, lineHeight: 1.35 }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 400, color: textColor, lineHeight: 1.4 }}>
             {letter.trigger}
           </p>
 
           {/* opened badge */}
           {opened && (
-            <div style={{ marginTop: 16 }}>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 8, letterSpacing: "0.18em", color: isSecret ? "rgba(201,169,110,0.5)" : "rgba(44,36,32,0.3)", textTransform: "uppercase" }}>
+            <div style={{ marginTop: 20 }}>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 9.5, letterSpacing: "0.18em", color: isSecret ? "rgba(201,169,110,0.5)" : "rgba(44,36,32,0.3)", textTransform: "uppercase" }}>
                 ✓ Opened · {openedDate}
               </p>
             </div>
@@ -797,17 +797,19 @@ function LibraryScreen({
           </h2>
         </motion.div>
 
-        {/* single flat grid of all letters */}
+        {/* single flat grid of all letters — fixed 3 per row */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 200px), 1fr))",
-            gap: "28px 20px",
+            gap: "44px 32px",
             alignItems: "end",
             marginBottom: 40,
+            maxWidth: 900,
+            marginLeft: "auto",
+            marginRight: "auto",
           }}
         >
           {regularLetters.map((letter, i) => (
