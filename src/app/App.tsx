@@ -101,18 +101,65 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 2, trigger: "life feels overwhelming", password: "overwhelmed",
+    id: 2, trigger: "You just entered the new House", password: "esuoh",
     body: [
-      "Stop. Just for a moment. Put the list down. Close all the tabs.",
-      "You don't have to fix everything tonight. You don't have to be impressive right now. You don't have to be okay if you're not okay.",
-      "Overwhelm makes everything feel urgent and nothing feel manageable. But that feeling lies. It makes Tuesday feel like a crisis. It makes normal tiredness feel like failure.",
-      "You have handled hard things before. Quietly, without fanfare, without anyone writing it down. You've sat with uncertainty and come out the other side holding something you learned. You've survived every difficult day you've faced so far — that's one hundred percent of them.",
-      "Tonight, you only have to do one thing: take care of yourself. Everything else can wait until morning. The world will not collapse if you rest.",
-      "Make something warm. Find something that makes you feel held. Sleep if you can. And in the morning, the list will be shorter than it feels tonight.",
+        "Hello Mrs.Jambhalepatil,",
+  "",
+  "You did it!",
+  "Seems that you have just entered YOUR NEW FAT HOUSE!!",
+  "And before you even begin this new chapter, I want you to realize something that you probably won't tell yourself...",
+  "",
+  "You've won today.",
+  "Not because you've reached some final destination.",
+  "Not because life suddenly became perfect.",
+  "But because you took the right decision.",
+  "",
+  "Because...",
+  "You left behind certainty for possibility.",
+  "Comfort for growth.",
+  "The familiar for the unknown.",
+  "This needs guts!",
+  "",
+  "The girl who walked into an empty house with nothing except hope in her heart...",
+  "She didn't know exactly what the future would look like.",
+  "She didn't know which days would become her happiest memories or which days would quietly teach her the biggest lessons.",
+  "She didn't know the people she would meet, the opportunities waiting for her, or the countless little moments that would one day build your own little world.",
+  "All she knew was that she can do it, and sometimes, that's all life asks of us.",
+  "",
+  "Do you remember Manu talking about the warmth you carry?",
+  "I can never unhear that part!",
+  "You have this crazy gift of making people feel like they belong.",
+  "You don't just live in a house, you breathe life into it man.",
+  "And honestly, in MY eyes, you're the definition of a HOME.",
+  "",
+  "And Akash Dada also...",
+  "Thank you for being the person who stands by her through thick and thin.",
+  "The way you both bring out the best in each other is just too good.",
+  "Watching the two of you has taught me so much about growing up.",
+  "I am so so proud of y'all.",
+  "",
+  "There's a lot more to say about him and you, but I'll keep this one short.",
+  "",
+  "All the very best.",
+  "Live the most today and just be in this moment, coz these come once in a lifetime.",
+  "The house is lucky to have you.",
+  "There will always be something special about the place you both will live in.",
+  "",
+  "Fill it with late-night talks.",
+  "Lazy Sunday mornings.",
+  "Random dance sessions.",
+  "Burnt food experiments.",
+  "Warm hugs after long days.",
+  "Too many plants.",
+  "Too many photos.",
+  "And memories that someday will make you smile for no reason.",
+  "",
+  "Love y'all so much!",
+  "Life is short for everything u did here, so now just live it and kill it babyy ❤️"
     ],
   },
   {
-    id: 3, trigger: "you feel like giving up", password: "surrender",
+    id: 3, trigger: "you feel like giving up", password: "xjxx/';kdd=",
     body: [
       "Don't. Not today. Not this one.",
       "I know that what you're feeling right now is real. I'm not going to tell you it isn't hard, or that you should look on the bright side, or that everything happens for a reason. It's hard. That's true. I believe you.",
@@ -123,7 +170,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 4, trigger: "you miss home", password: "home",
+    id: 4, trigger: "you need comfort", password: "][djsjd7d9d=",
     body: [
       "There will be a specific kind of afternoon — usually a Sunday — when the light is the wrong color and the air smells like somewhere that isn't home. That's when I know you're missing it.",
       "Home, for us, was never just a building. It was the sound of Mum's pressure cooker from two rooms away. Dad's specific way of folding the newspaper. The two of us fighting over the bathroom mirror and then sitting on the terrace afterward like nothing had happened.",
@@ -133,7 +180,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 5, trigger: "you miss me", password: "missing",
+    id: 5, trigger: "you're proud of yourself", password: "jdjd';.,][=d8899",
     body: [
       "I miss you too. I need you to know that first.",
       "I miss you when something funny happens and I reach for my phone and then remember there's a time difference. I miss you when I find a meme that is specifically, perfectly you. I miss you when Mum says something that only we would find unreasonably funny. I miss you during the ordinary minutes, not just the important ones.",
@@ -144,7 +191,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 6, trigger: "you need a hug", password: "hug",
+    id: 6, trigger: "You're having a bad day", password: "xndjd'/.;p-xnx",
     body: [
       "I know I can't cross the distance right now. So consider this letter a hug — a very long one, the kind you have to wiggle out of eventually.",
       "If I were there: I would make you tea without asking. I would sit beside you without filling the silence. I would find something stupid to watch until you felt better. I would remind you that you are allowed to need comfort, that needing it is not weakness, and that I am the last person who would ever think less of you for it.",
@@ -153,7 +200,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 7, trigger: "you're happy", password: "happy",
+    id: 7, trigger: "you're happy", password: "kjvvv'/[h=ghjg",
     body: [
       "You're reading this because something is right. Something good happened. And I am so, so happy for you.",
       "Don't rush past this. Don't minimize it. Don't immediately think about the next thing or the thing that could go wrong. Just stay here, in this exact moment, a little while longer.",
@@ -163,7 +210,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 8, trigger: "you're proud of yourself", password: "proud",
+    id: 8, trigger: "Adulting feels too hard", password: "xlesbfjfye8's]v'",
     body: [
       "I want you to pause here.",
       "Don't read ahead. Don't move to the next thing. Just stay in this moment and feel it properly.",
@@ -175,7 +222,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 9, trigger: "you can't sleep", password: "sleepless",
+    id: 9, trigger: "you can't sleep", password: "zkxnvafwu2820",
     body: [
       "Di.",
       "It's late. Or very early. The room is too quiet and your brain is too loud and all the things you meant to think about today are having a party without your permission.",
@@ -187,7 +234,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 10, trigger: "you need motivation", password: "motivated",
+    id: 10, trigger: "You are overthinking", password: "slosb;'[g42ld",
     body: [
       "Do you remember when you were sixteen and you decided to learn calligraphy from a YouTube tutorial? You practiced for three weeks and then pronounced yourself 'adequate' and moved on. You were always like that — quietly ambitious, never needing applause.",
       "I need you to remember how far you've come. Not in a motivational-poster way. In the real, specific, undeniable way.",
@@ -199,7 +246,7 @@ const LETTERS: LetterData[] = [
 
   // Secret
   {
-    id: 16, trigger: "you've read everything", password: "always", isSecret: true,
+    id: 16, trigger: "Love feels difficult", password: "s;[/.-sbfhbfh", isSecret: true,
     body: [
       "You found it.",
       "I wasn't sure you would. Or maybe I always knew you would, because that's who you are — the kind of person who opens all the doors, reads all the words, stays until the end.",
