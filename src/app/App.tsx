@@ -429,7 +429,7 @@ function HeroScreen({ onBegin }: { onBegin: () => void }) {
           style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(58px, 14vw, 100px)", fontWeight: 300, fontStyle: "italic", color: "#2C2420", lineHeight: 1.0, letterSpacing: "-0.01em", marginBottom: 32 }}
         >
           Open When...
-          For Swarali ❤️
+          SWARALI Edition
         </motion.h1>
 
         <motion.div
