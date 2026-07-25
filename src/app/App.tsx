@@ -46,7 +46,7 @@ const SCATTER = [
 const LETTERS: LetterData[] = [
   // Chapter 1: Difficult Days
   {
-    id: 1, chapter: 1, trigger: "you feel lonely", password: "lonely",
+    id: 1, chapter: 1, trigger: "you feel lonely", password: "ylenol",
     body: [
       "Di, if you're reading this, the quiet has gotten a little too loud tonight. I know that particular kind of alone — the one that sits beside you even in a crowded room, the one that makes the ceiling very interesting at 2 a.m.",
       "When I was eight, you used to let me sleep in your bed during thunderstorms. You'd say the lightning was just the sky taking photographs. I believed you completely, and somehow that made everything softer.",
