@@ -419,7 +419,7 @@ function HeroScreen({ onBegin }: { onBegin: () => void }) {
           transition={{ duration: 2, delay: 0.5 }}
           style={{ fontFamily: "'Inter', sans-serif", fontSize: 9, letterSpacing: "0.3em", color: "#8B7D72", textTransform: "uppercase", marginBottom: 28 }}
         >
-          For my pretty hot and tempting Ladyy
+          For my pretty hot and tempting Ladyy,
         </motion.p>
 
         <motion.h1
@@ -428,8 +428,9 @@ function HeroScreen({ onBegin }: { onBegin: () => void }) {
           transition={{ duration: 1.4, delay: 0.9, ease }}
           style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(58px, 14vw, 100px)", fontWeight: 300, fontStyle: "italic", color: "#2C2420", lineHeight: 1.0, letterSpacing: "-0.01em", marginBottom: 32 }}
         >
-          Open When...
-          SWARALI Edition
+          The
+          SWARALI 
+          Edition
         </motion.h1>
 
         <motion.div
@@ -445,7 +446,7 @@ function HeroScreen({ onBegin }: { onBegin: () => void }) {
           transition={{ duration: 1.2, delay: 2 }}
           style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 18, fontWeight: 300, fontStyle: "italic", color: "#8B7D72", marginBottom: 52 }}
         >
-          For every day life feels a little different.
+          When life feels a little different.
         </motion.p>
 
         <motion.div
@@ -489,7 +490,7 @@ function WelcomeScreen({ onContinue }: { onContinue: () => void }) {
           transition={{ duration: 1.2, delay: 0.3, ease }}
           style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(38px, 9vw, 68px)", fontWeight: 300, fontStyle: "italic", color: "#2C2420", marginBottom: 40 }}
         >
-          Welcome Home.
+          Open When...
         </motion.h2>
 
         <GoldRule className="mb-10" />
@@ -543,7 +544,7 @@ function IntroScreen({ onContinue }: { onContinue: () => void }) {
     "Keep them safe.",
     "And remember...",
     "",
-    "Home never left you.",
+    "Home is where you are.",
   ];
 
   return (
@@ -859,7 +860,7 @@ function LibraryScreen({
             Memory Library
           </p>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(28px, 6vw, 48px)", fontWeight: 300, fontStyle: "italic", color: "#2C2420" }}>
-            Fifteen letters, written just for you.
+            Letters, written just for you.
           </h2>
         </motion.div>
 
