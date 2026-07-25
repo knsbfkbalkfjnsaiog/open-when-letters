@@ -15,7 +15,6 @@ type UnsealStage = "idle" | "cracking" | "unfolding" | "done";
 
 interface LetterData {
   id: number;
-  chapter: number;
   trigger: string;
   password: string;
   body: string[];
@@ -26,27 +25,20 @@ interface OpenedLetters {
   [id: number]: string;
 }
 
-/* ─── chapter data ───────────────────────────────────────── */
-const CHAPTERS = [
-  { id: 1, title: "For Difficult Days", subtitle: "When the weight feels heaviest" },
-  { id: 2, title: "For Missing Home", subtitle: "When distance becomes distance" },
-  { id: 3, title: "For Beautiful Days", subtitle: "When everything is right" },
-  { id: 4, title: "For Quiet Nights", subtitle: "When the world goes still" },
-];
-
-/* ─── scatter positions (non-random, per chapter index) ──── */
+/* ─── scatter positions (non-random, per index) ──────────── */
 const SCATTER = [
   { rotate: -0.6, offsetY: 0 },
   { rotate: 0.9, offsetY: 14 },
   { rotate: -1.3, offsetY: -6 },
   { rotate: 0.5, offsetY: 10 },
+  { rotate: -0.9, offsetY: 6 },
+  { rotate: 1.1, offsetY: -10 },
 ];
 
-/* ─── letter data ────────────────────────────────────────── */
+/* ─── letter data (10 letters + 1 secret) ────────────────── */
 const LETTERS: LetterData[] = [
-  // Chapter 1: Difficult Days
   {
-    id: 1, chapter: 1, trigger: "you feel lonely", password: "ylenol",
+    id: 1, trigger: "you feel lonely", password: "ylenol",
     body: [
         "Hello Mrs.Jambhalepatil,",
   "",
@@ -109,7 +101,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 2, chapter: 1, trigger: "life feels overwhelming", password: "overwhelmed",
+    id: 2, trigger: "life feels overwhelming", password: "overwhelmed",
     body: [
       "Stop. Just for a moment. Put the list down. Close all the tabs.",
       "You don't have to fix everything tonight. You don't have to be impressive right now. You don't have to be okay if you're not okay.",
@@ -120,7 +112,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 3, chapter: 1, trigger: "you feel like giving up", password: "surrender",
+    id: 3, trigger: "you feel like giving up", password: "surrender",
     body: [
       "Don't. Not today. Not this one.",
       "I know that what you're feeling right now is real. I'm not going to tell you it isn't hard, or that you should look on the bright side, or that everything happens for a reason. It's hard. That's true. I believe you.",
@@ -131,20 +123,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 4, chapter: 1, trigger: "you're scared", password: "scared",
-    body: [
-      "Good. That means it matters.",
-      "Fear is the body's way of saying: this is real, this is significant, I care about what happens here. You can't feel scared about things that don't matter to you.",
-      "So you are scared. And also — you are still here. Still reading. Still breathing through something that frightened you.",
-      "I've watched you be scared before. I've watched you do the thing anyway. With shaking hands sometimes, or a too-fast heartbeat, or eyes that were filling up. But you did it.",
-      "Fear isn't the opposite of courage. Fear is exactly where courage begins.",
-      "Whatever this is — go toward it. Slowly if you need to. But go.",
-    ],
-  },
-
-  // Chapter 2: Missing Home
-  {
-    id: 5, chapter: 2, trigger: "you miss home", password: "home",
+    id: 4, trigger: "you miss home", password: "home",
     body: [
       "There will be a specific kind of afternoon — usually a Sunday — when the light is the wrong color and the air smells like somewhere that isn't home. That's when I know you're missing it.",
       "Home, for us, was never just a building. It was the sound of Mum's pressure cooker from two rooms away. Dad's specific way of folding the newspaper. The two of us fighting over the bathroom mirror and then sitting on the terrace afterward like nothing had happened.",
@@ -154,7 +133,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 6, chapter: 2, trigger: "you miss me", password: "missing",
+    id: 5, trigger: "you miss me", password: "missing",
     body: [
       "I miss you too. I need you to know that first.",
       "I miss you when something funny happens and I reach for my phone and then remember there's a time difference. I miss you when I find a meme that is specifically, perfectly you. I miss you when Mum says something that only we would find unreasonably funny. I miss you during the ordinary minutes, not just the important ones.",
@@ -165,17 +144,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 7, chapter: 2, trigger: "your first festival away", password: "festival",
-    body: [
-      "This one is different, I know. The lights will be there — somewhere — but they won't be ours. The sweets will exist, but they won't be Mum's. The noise will happen, but it won't be our specific noise.",
-      "The first festival away from home is its own kind of grief. Let it be. You don't have to pretend it's fine or perform cheerfulness. Missing it is the right response. Missing it means something.",
-      "But here's what I want you to do: find one thing. One candle, one sweet, one song, one call home. Make it a small ceremony. A private one. Just for you.",
-      "You are not less because you're away. You're not failing at family because you're building a life somewhere new. Tradition isn't only location — it's intention. And you carry the intention with you.",
-      "Light something tonight, di. And know that I'm lighting it with you from here.",
-    ],
-  },
-  {
-    id: 8, chapter: 2, trigger: "you need a hug", password: "hug",
+    id: 6, trigger: "you need a hug", password: "hug",
     body: [
       "I know I can't cross the distance right now. So consider this letter a hug — a very long one, the kind you have to wiggle out of eventually.",
       "If I were there: I would make you tea without asking. I would sit beside you without filling the silence. I would find something stupid to watch until you felt better. I would remind you that you are allowed to need comfort, that needing it is not weakness, and that I am the last person who would ever think less of you for it.",
@@ -183,10 +152,8 @@ const LETTERS: LetterData[] = [
       "Let yourself be a little soft right now. Let this moment be for you. I'm sending you every warm thing I have.",
     ],
   },
-
-  // Chapter 3: Beautiful Days
   {
-    id: 9, chapter: 3, trigger: "you're happy", password: "happy",
+    id: 7, trigger: "you're happy", password: "happy",
     body: [
       "You're reading this because something is right. Something good happened. And I am so, so happy for you.",
       "Don't rush past this. Don't minimize it. Don't immediately think about the next thing or the thing that could go wrong. Just stay here, in this exact moment, a little while longer.",
@@ -196,7 +163,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 10, chapter: 3, trigger: "you're proud of yourself", password: "proud",
+    id: 8, trigger: "you're proud of yourself", password: "proud",
     body: [
       "I want you to pause here.",
       "Don't read ahead. Don't move to the next thing. Just stay in this moment and feel it properly.",
@@ -208,31 +175,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 11, chapter: 3, trigger: "you achieve something", password: "achieved",
-    body: [
-      "I KNEW IT.",
-      "I knew it with the specific, unshakeable certainty of someone who has watched you work for years. Who has seen you do the unglamorous part — the revision, the doubt, the starting over, the trying again. I knew it before you did.",
-      "Please don't minimize this. Don't immediately move to the next thing. Don't measure this achievement against someone else's or tell yourself it was luck.",
-      "This is what effort looks like when it finally arrives. This is what you look like when you don't give up.",
-      "Mum and Dad will be proud. I'm proud. But more importantly — are you proud? You should be. The kind of proud that sits quietly in your chest for years. The kind that reminds you, on harder days, of what you're capable of.",
-      "Celebrate properly. You have earned every bit of this.",
-    ],
-  },
-  {
-    id: 12, chapter: 3, trigger: "you want to smile", password: "smile",
-    body: [
-      "Do you remember the great Mango Incident of 2017?",
-      "You had convinced Mum that the mangoes were 'definitely still good' and then spent the entire dinner very confidently eating something that was absolutely, unambiguously not still good. You insisted until the end. You maintained eye contact while Mum watched. Dad had to leave the table he was laughing so hard.",
-      "You never admitted it. To this day, you maintain the mangoes were fine.",
-      "I love you so much for that. For the stubbornness, the commitment to the bit, the absolute theatrical sincerity of it all.",
-      "This is what I want you to remember when you want to smile: we are ridiculous together. We are specific and funny in a way that only works between us. No one in the world knows the exact shade of our particular humor.",
-      "That doesn't go away when we're apart. It just waits, patient, for the next time we're in the same room arguing about perfectly fine mangoes.",
-    ],
-  },
-
-  // Chapter 4: Quiet Nights
-  {
-    id: 13, chapter: 4, trigger: "you can't sleep", password: "sleepless",
+    id: 9, trigger: "you can't sleep", password: "sleepless",
     body: [
       "Di.",
       "It's late. Or very early. The room is too quiet and your brain is too loud and all the things you meant to think about today are having a party without your permission.",
@@ -244,18 +187,7 @@ const LETTERS: LetterData[] = [
     ],
   },
   {
-    id: 14, chapter: 4, trigger: "you're angry", password: "angry",
-    body: [
-      "Anger is information. It's telling you something isn't right — that a line was crossed, a boundary was missed, something that matters to you wasn't honored. Don't ignore it.",
-      "But sit with it first. Before you send the message. Before you say the thing that can't be unsaid. Before you make the decision that belongs to 3 a.m. and not to daylight.",
-      "Anger in us runs hot and clean. It burns through and it passes. You know this.",
-      "You are allowed to be angry. You are allowed to feel the full weight of something unfair. And then — when it quiets a little — you'll know what the anger was really about.",
-      "Take a walk. Drink some water. Breathe through your nose, slowly.",
-      "And if it's still there tomorrow, it was real. Deal with it then. With full dignity.",
-    ],
-  },
-  {
-    id: 15, chapter: 4, trigger: "you need motivation", password: "motivated",
+    id: 10, trigger: "you need motivation", password: "motivated",
     body: [
       "Do you remember when you were sixteen and you decided to learn calligraphy from a YouTube tutorial? You practiced for three weeks and then pronounced yourself 'adequate' and moved on. You were always like that — quietly ambitious, never needing applause.",
       "I need you to remember how far you've come. Not in a motivational-poster way. In the real, specific, undeniable way.",
@@ -267,7 +199,7 @@ const LETTERS: LetterData[] = [
 
   // Secret
   {
-    id: 16, chapter: 0, trigger: "you've read everything", password: "always", isSecret: true,
+    id: 16, trigger: "you've read everything", password: "always", isSecret: true,
     body: [
       "You found it.",
       "I wasn't sure you would. Or maybe I always knew you would, because that's who you are — the kind of person who opens all the doors, reads all the words, stays until the end.",
@@ -684,18 +616,18 @@ function EnvelopeCard({
   opened,
   openedDate,
   onOpen,
-  chapterIndex,
+  scatterIndex,
   isSecret,
 }: {
   letter: LetterData;
   opened: boolean;
   openedDate?: string;
   onOpen: (l: LetterData) => void;
-  chapterIndex: number;
+  scatterIndex: number;
   isSecret?: boolean;
 }) {
   const [hovered, setHovered] = useState(false);
-  const scatter = SCATTER[chapterIndex % SCATTER.length];
+  const scatter = SCATTER[scatterIndex % SCATTER.length];
 
   const bgColor = isSecret ? "#1A1410" : "#EDE9DF";
   const flapColor = isSecret ? "#120E0A" : "#E4DDD0";
@@ -844,6 +776,7 @@ function LibraryScreen({
   onOpenEnvelope: (l: LetterData) => void;
   showSecret: boolean;
 }) {
+  const regularLetters = LETTERS.filter((l) => !l.isSecret);
   const secretLetter = LETTERS.find((l) => l.isSecret)!;
 
   return (
@@ -864,54 +797,30 @@ function LibraryScreen({
           </h2>
         </motion.div>
 
-        {/* chapters */}
-        {CHAPTERS.map((chapter, ci) => {
-          const chapterLetters = LETTERS.filter((l) => l.chapter === chapter.id);
-          return (
-            <motion.div
-              key={chapter.id}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: ci * 0.15, ease }}
-              style={{ marginBottom: 64 }}
-            >
-              {/* chapter label */}
-              <div style={{ marginBottom: 28 }}>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 9, letterSpacing: "0.25em", color: "#C9A96E", textTransform: "uppercase", marginBottom: 6 }}>
-                  {["I", "II", "III", "IV"][ci]}
-                </p>
-                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 400, color: "#2C2420", marginBottom: 4 }}>
-                  {chapter.title}
-                </h3>
-                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 14, fontStyle: "italic", color: "#8B7D72" }}>
-                  {chapter.subtitle}
-                </p>
-              </div>
-              <GoldRule className="mb-8" />
-
-              {/* envelopes */}
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 200px), 1fr))",
-                  gap: "20px 16px",
-                  alignItems: "end",
-                }}
-              >
-                {chapterLetters.map((letter, li) => (
-                  <EnvelopeCard
-                    key={letter.id}
-                    letter={letter}
-                    opened={!!openedLetters[letter.id]}
-                    openedDate={openedLetters[letter.id]}
-                    onOpen={onOpenEnvelope}
-                    chapterIndex={li}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          );
-        })}
+        {/* single flat grid of all letters */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease }}
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 200px), 1fr))",
+            gap: "28px 20px",
+            alignItems: "end",
+            marginBottom: 40,
+          }}
+        >
+          {regularLetters.map((letter, i) => (
+            <EnvelopeCard
+              key={letter.id}
+              letter={letter}
+              opened={!!openedLetters[letter.id]}
+              openedDate={openedLetters[letter.id]}
+              onOpen={onOpenEnvelope}
+              scatterIndex={i}
+            />
+          ))}
+        </motion.div>
 
         {/* secret letter */}
         <AnimatePresence>
@@ -933,7 +842,7 @@ function LibraryScreen({
                   opened={!!openedLetters[secretLetter.id]}
                   openedDate={openedLetters[secretLetter.id]}
                   onOpen={onOpenEnvelope}
-                  chapterIndex={0}
+                  scatterIndex={0}
                   isSecret
                 />
               </div>
@@ -1473,7 +1382,7 @@ export default function App() {
     setActiveLetter(null);
     const updatedAll = ALL_REGULAR_IDS.every((id) => !!openedLetters[id]);
     if (updatedAll && !openedLetters[16]) {
-      // all 15 opened, show final
+      // all regular letters opened, show final
       setScreen("final");
     }
   };
