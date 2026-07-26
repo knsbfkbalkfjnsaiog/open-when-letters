@@ -53,7 +53,7 @@ const LETTERS: LetterData[] = [
   "",
   "Let me tell you,",
   "It's really OKAYY <3",
-  "It's so fkin True to say",
+  "It's so True to say",
   "\"kuch pane ke liye kuch khona padta hai\"",
   "",
   "And you know what the best part is that u are finally away from the people who atleast once, made you cry, let you down as if you are nothing, made u feel even lonelier. And now is the time they are actually getting to know YOUR REAL VALUE (which ofc no one can ever ever even 1% know (Its just I who know it haha)) and understand.",
@@ -1183,7 +1183,7 @@ function LetterView({
           transition={{ duration: 0.8, delay: 0.3 }}
           style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 14, fontStyle: "italic", color: isSecret ? "rgba(201,169,110,0.5)" : "#8B7D72", marginBottom: 6 }}
         >
-          My dearest Di,
+          To didi,
         </motion.p>
 
         <GoldRule className="mb-8" />
